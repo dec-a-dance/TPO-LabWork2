@@ -2,9 +2,9 @@ package tpo.lab2.logariphm;
 
 import tpo.lab2.AbstractFunction;
 
-public class Log extends AbstractFunction {
+public class Log_10 extends AbstractFunction {
 
-    public Log(double accuracy) {
+    public Log_10(double accuracy) {
         super(accuracy);
     }
 
