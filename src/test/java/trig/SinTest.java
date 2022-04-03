@@ -9,7 +9,7 @@ import tpo.lab2.trig.Sin;
 import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SinTests {
+public class SinTest {
     private static final double ACC = 0.0001;
     private Sin sin;
 
@@ -19,22 +19,9 @@ public class SinTests {
     }
 
     @ParameterizedTest
-    @ValueSource(doubles = {-PI, 0, PI})
-    public void testOnZero(double x){
-        assertEquals(0.0, sin.calculate(x), ACC);
+    @ValueSource(doubles = {-3 * PI/2, -4 * PI/3, -PI, -PI/2, -PI/3, -PI/6, 0, PI/6, PI/3, PI/2, PI, 4 * PI/3, 3 * PI/2})
+    public void someTests(double x){
+        assertEquals(Math.sin(x), sin.calculate(x), ACC);
     }
-
-    @ParameterizedTest
-    @ValueSource(doubles = {-3 * PI/2, PI/2})
-    public void testOnOne(double x){
-        assertEquals(1.0, sin.calculate(x), ACC);
-    }
-
-    @ParameterizedTest
-    @ValueSource(doubles = {-PI/2, 3 * PI/2})
-    public void testOnMinusOne(double x){
-        assertEquals(-1.0, sin.calculate(x), ACC);
-    }
-
 
 }

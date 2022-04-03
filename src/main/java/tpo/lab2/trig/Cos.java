@@ -12,6 +12,6 @@ public class Cos extends AbstractFunction {
 
     @Override
     public double calculate(double x){
-        return Math.sqrt(1.0 - Math.pow(sin.calculate(x), 2));
+        return 1 - 2 * Math.pow(sin.calculate(x / 2), 2);
     }
 }
