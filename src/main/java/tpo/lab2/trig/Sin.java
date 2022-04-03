@@ -14,10 +14,14 @@ public class Sin extends AbstractFunction{
     }
 
     private long factorial(long val) {
-        if (val <= 1)
+        if (val<=2){
             return 1;
-        else
-            return val * (factorial(val - 1));
+        }
+        long result = 1;
+        for (int i = 2; i<=val; i++){
+            result*=i;
+        }
+        return result;
     }
 
     @Override
