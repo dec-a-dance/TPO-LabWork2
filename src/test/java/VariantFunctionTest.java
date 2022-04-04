@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,6 +12,7 @@ import tpo.lab2.VariantFunction;
 import tpo.lab2.trig.*;
 import tpo.lab2.logariphm.*;
 
+import static java.lang.Double.NaN;
 import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.eq;
@@ -90,6 +92,17 @@ public class VariantFunctionTest {
         when(sec.calculate(eq(x))).thenReturn(1.0/Math.cos(x));
         when(csc.calculate(eq(x))).thenReturn(1.0/Math.sin(x));
         assertEquals(y, func.calculate(x), ACC*100);
+    }
+
+    @ParameterizedTest
+    @ValueSource(doubles={0.0})
+    public void nanTest(double x){
+        when(sin.calculate(eq(x))).thenReturn(Math.sin(x));
+        when(cos.calculate(eq(x))).thenReturn(Math.cos(x));
+        when(tan.calculate(eq(x))).thenReturn(Math.tan(x));
+        when(sec.calculate(eq(x))).thenReturn(1.0/Math.cos(x));
+        when(csc.calculate(eq(x))).thenReturn(1.0/Math.sin(x));
+        assertEquals(NaN, func.calculate(0));
     }
 
 }

@@ -3,6 +3,7 @@ package tpo.lab2;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Locale;
@@ -26,7 +27,7 @@ public class CsvPrinter {
                 }
                 printStream.printf(Locale.US, "%f%c %f\n", x, SEPARATOR, y);
             }
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.err.println("Can't write to file: " + e.getMessage());
         }
     }

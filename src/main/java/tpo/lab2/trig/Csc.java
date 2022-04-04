@@ -14,6 +14,9 @@ public class Csc extends AbstractFunction {
 
     @Override
     public double calculate(double x) {
+        if (x % Math.PI == 0) {
+            return NaN;
+        }
         return 1.0/sin.calculate(x);
     }
 }

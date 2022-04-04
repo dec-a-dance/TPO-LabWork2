@@ -4,15 +4,15 @@ import tpo.lab2.trig.*;
 import tpo.lab2.logariphm.*;
 
 public class VariantFunction extends AbstractFunction{
-    private Sin sin;
-    private Cos cos;
-    private Tan tan;
-    private Csc csc;
-    private Sec sec;
-    private Ln ln;
-    private Log_10 log_10;
-    private Log_5 log_5;
-    private Log_2 log_2;
+    private Sin sin = new Sin(accuracy);
+    private Cos cos = new Cos(accuracy);
+    private Tan tan = new Tan(accuracy);
+    private Csc csc = new Csc(accuracy);
+    private Sec sec = new Sec(accuracy);
+    private Ln ln = new Ln(accuracy);
+    private Log_10 log_10 = new Log_10(accuracy);
+    private Log_5 log_5 = new Log_5(accuracy);
+    private Log_2 log_2 = new Log_2(accuracy);
 
     public VariantFunction(double accuracy) {
         super(accuracy);

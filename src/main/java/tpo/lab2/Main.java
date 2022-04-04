@@ -14,19 +14,19 @@ public class Main {
         csvPrinter.setPath("src/main/resources/");
 
         Sin sin = new Sin(TEST_ACCURACY);
-        csvPrinter.write("sin.csv", sin, 0, 2*PI, PI/8);
+        csvPrinter.write("sin.csv", sin, 0, PI, PI/8);
 
         Cos cos = new Cos(TEST_ACCURACY);
-        csvPrinter.write("cos.csv", cos, 0, 2*PI, PI/8);
+        csvPrinter.write("cos.csv", cos, 0, PI, PI/8);
 
         Tan tan = new Tan(TEST_ACCURACY);
-        csvPrinter.write("tan.csv", tan, 0, 2*PI, PI/8);
+        csvPrinter.write("tan.csv", tan, 0, PI, PI/8);
 
         Sec sec = new Sec(TEST_ACCURACY);
-        csvPrinter.write("sec.csv", sec, 0, 2*PI, PI/8);
+        csvPrinter.write("sec.csv", sec, 0, PI, PI/8);
 
         Csc csc = new Csc(TEST_ACCURACY);
-        csvPrinter.write("csc.csv", csc, 0, 2*PI, PI/8);
+        csvPrinter.write("csc.csv", csc, 0, PI, PI/8);
 
         Ln ln = new Ln(TEST_ACCURACY);
         csvPrinter.write("ln.csv", ln, 0, 4, 0.1);
@@ -41,6 +41,6 @@ public class Main {
         csvPrinter.write("log10.csv", ln, 0, 15, 0.3);
 
         VariantFunction function = new VariantFunction(TEST_ACCURACY);
-        csvPrinter.write("variant.csv", function, 0, 2*PI, PI/8);
+        csvPrinter.write("function.csv", function, -3, 3, 0.5);
     }
 }
