@@ -18,6 +18,7 @@ public class VariantFunction extends AbstractFunction{
         super(accuracy);
     }
 
+
     @Override
     public double calculate(double x) {
         if(x<=0){
