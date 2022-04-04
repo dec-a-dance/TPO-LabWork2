@@ -8,8 +8,6 @@ import java.util.Objects;
 public abstract class AbstractFunction {
     @Getter
     public final double accuracy;
-    public static BigDecimal TRIGONOMETRIC_CALC_ACCURACY = BigDecimal.valueOf(10E-300);
-    public static BigDecimal LOGARITHMIC_CALC_ACCURACY = BigDecimal.valueOf(10E-50);
 
     public AbstractFunction(double accuracy) {
         Objects.requireNonNull(accuracy, "Accuracy should not be NULL");

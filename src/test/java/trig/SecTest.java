@@ -9,7 +9,7 @@ import static java.lang.Math.PI;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SecTest {
-    private static final double ACC = 0.0001;
+    private static final double ACC = 0.00000000000001;
     private Sec sec;
 
     @BeforeEach
@@ -18,7 +18,7 @@ public class SecTest {
     }
 
     @ParameterizedTest
-    @ValueSource(doubles = {-4 * PI/3, -PI, -PI/3, -PI/6, 0, PI/6, PI, 4 * PI/3})
+    @ValueSource(doubles = {-4 * PI/3, -PI, -PI/3, -PI/6, 0, PI/6, PI/3, PI, 4 * PI/3})
     public void someTests(double x){
         assertEquals(1.0/Math.cos(x), sec.calculate(x), ACC);
     }
