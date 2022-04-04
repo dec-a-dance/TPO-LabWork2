@@ -5,6 +5,8 @@ import static java.lang.Math.PI;
 
 import tpo.lab2.logariphm.*;
 
+import java.time.temporal.Temporal;
+
 public class Main {
     public static void main(String[] args) {
         final double TEST_ACCURACY = 0.0001;
@@ -26,7 +28,17 @@ public class Main {
         Csc csc = new Csc(TEST_ACCURACY);
         csvPrinter.write("csc.csv", csc, 0, 2*PI, PI/8);
 
-        //todo add logs
+        Ln ln = new Ln(TEST_ACCURACY);
+        csvPrinter.write("ln.csv", ln, 0, 4, 0.1);
+
+        Log_2 log2 = new Log_2(TEST_ACCURACY);
+        csvPrinter.write("log2.csv", ln, 0, 4, 0.1);
+
+        Log_5 log5 = new Log_5(TEST_ACCURACY);
+        csvPrinter.write("log5.csv", ln, 0, 10, 0.2);
+
+        Log_10 log10 = new Log_10(TEST_ACCURACY);
+        csvPrinter.write("log10.csv", ln, 0, 15, 0.3);
 
         VariantFunction function = new VariantFunction(TEST_ACCURACY);
         csvPrinter.write("variant.csv", function, 0, 2*PI, PI/8);
